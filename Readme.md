@@ -18,7 +18,7 @@ This is a Spring Boot application to track IoT devices' locations from a CSV fil
 
 ### Load CSV Data
 
-- URL: `/iot/event/v1/`
+- URL: `/iot/event/v1`
 - Method: `POST`
 - Body: `{ "filepath": "C:/path/to/data.csv" }`
 - Response:
@@ -26,6 +26,23 @@ This is a Spring Boot application to track IoT devices' locations from a CSV fil
     - 404 Not Found: `{ "description": "ERROR: no data file found" }`
     - 500 Internal Server Error: `{ "description": "ERROR: A technical exception occurred." }`
 
+### Get IOT Device Data By ProductId and DateTime
+
+- URL: `/iot/event/v1?ProductId=<productId>&tstmp=<DateTime>`
+- Method: `GET`
+- Response:
+    - 200 OK: `Complete Response Body`
+    - 404 Not Found: `{ "description": "ERROR: Id <productId> not found" }`
+    - 400 Bad Request: `{ "description": "ERROR: Device could not be located" }`
+
 ## Testing
 
 Run `mvn test` to execute unit tests.
+
+## Swagger
+
+Login to Swagger with below endpoint - 
+
+`/swagger-ui/index.html`
+
+Example - `http://localhost:8080/swagger-ui/index.html`
