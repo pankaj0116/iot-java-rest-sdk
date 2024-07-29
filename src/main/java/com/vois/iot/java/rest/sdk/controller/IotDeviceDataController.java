@@ -55,7 +55,7 @@ public class IotDeviceDataController {
     }
 
     @GetMapping
-        public ResponseEntity<Object> getDeviceByProductIdAndTimestamp(@RequestParam(value = "ProductId", required = true)
+    public ResponseEntity<Object> getDeviceByProductIdAndTimestamp(@RequestParam(value = "ProductId", required = true)
                                                                    String productId,
                                                                    @RequestParam(value = "tstmp", required = false)
                                                                    Long timestamp) {
